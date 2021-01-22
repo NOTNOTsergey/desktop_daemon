@@ -28,7 +28,7 @@ def file_search(cwd):
         try:
                 results = [str(i)[ str(i).index("'")  + 1 : -2 ] for i in os.scandir(cwd)]
         except:
-                print("it's an error")
+                print("An error occured")
                 return []
 
         files = [ [], [] ]
@@ -72,21 +72,21 @@ def branch():
         comand = input()
         if comand == 'exit':
                 program_state = False
-                print(f'please delay for cycle end {time_delay} s')
+                print(f'Please stick around for {time_delay} s')
         elif comand.startswith('delay'):
                 comand = comand[6 : ]
                 if comand.startswith('set'):
                         try:
                                 time_delay = int(comand[4 : ])
-                                print('delay  for reset the main thread')
+                                print('Please wait for the loop to restart')
                         except Exception as e:
                                 print(str(e))
                 elif comand == 'get':
-                        print(f'now delay is{time_delay} s')
+                        print(f'Changed the delay value to {time_delay} s')
         elif comand == 'pictures':
                 print(pictures_array)
         else:
-                print("i can't understand you")
+                print("Eh?") # imma steal the erlang shell real quick kthx :>
 
 
 main_thread = Thread(target=main, args=())

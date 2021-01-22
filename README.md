@@ -1,9 +1,9 @@
-for it works you need to move all this files to one directory
-in settings.txt you can point adress, where will it works
+**Warning: KDE only**
+_(good luck with windows lol)_
 
-IT WORKS ON KDE SYSTEMS ONLY
-
-if you have windows, sorry
-
-how it works:
-  python -u ~/your_directory/pic_change.py
+# Running
+```sh
+cd
+git clone https://github.com/NOTNOTsergey/desktop_daemon.git
+python -u ~/desktop_daemon/pic_change.py
+```
