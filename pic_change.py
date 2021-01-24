@@ -10,7 +10,7 @@ def file_search(cwd):
 		try:
 			results = [str(i)[ str(i).index("'")  + 1 : -2 ] for i in os.scandir(cwd)]
 		except:
-			print("An error occured")
+			print("it's an error")
 			return []
 
 		files = [ [], [] ]
@@ -31,14 +31,14 @@ def file_search(cwd):
 
 cwd = os.getcwd()
 
-print(f'Working dir: {cwd}')
-print('Checking the settings file...')
+print(f'i will work in --> {cwd} | directory')
+print('check the settings file...')
 
 if 'settings.txt' in file_search(cwd)[1]:
-        print('! found')
+        print('! file founded')
 else:
         print('! file not found')
-        print('Exiting')
+        print('completition work...')
         exit()
 
 f = open(cwd + '/settings.txt')
@@ -48,7 +48,7 @@ for row in f:
         content.append(row)
 f.close()
 
-print(f'The main file is going to run in {content[0][16 : ]}')
+print(f'main file will work in -> {content[0][16 : ]} | directory')
 os.system('cd ' + content[0][16 : ])
-print('    >    INITIATING THE CONTROL CENTER    <    ')
+print('    >    program control konsole    <    ')
 os.system('python -u ' + cwd + '/pic_change_main.py')
